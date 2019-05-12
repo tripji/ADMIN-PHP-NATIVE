@@ -71,7 +71,7 @@
 
 <?php 
     require 'config/db.php';
-    $query = mysqli_query($conn, "SELECT * FROM aspirasi ");
+    $query = mysqli_query($conn, "SELECT * FROM aspirasi WHERE status='0' ");
                         while($array = mysqli_fetch_array($query)){
                           echo '
 

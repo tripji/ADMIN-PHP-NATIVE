@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 11, 2019 at 12:27 PM
+-- Generation Time: May 12, 2019 at 03:56 AM
 -- Server version: 10.1.31-MariaDB
 -- PHP Version: 7.2.3
 
@@ -32,15 +32,17 @@ CREATE TABLE `aspirasi` (
   `idAspirasi` int(11) NOT NULL,
   `namaLengkap` varchar(30) DEFAULT NULL,
   `textAspirasi` varchar(255) DEFAULT NULL,
-  `foto` text NOT NULL
+  `foto` text NOT NULL,
+  `status` enum('0','1') NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `aspirasi`
 --
 
-INSERT INTO `aspirasi` (`idAspirasi`, `namaLengkap`, `textAspirasi`, `foto`) VALUES
-(3, 'jgsrkir', 'bgfvklofvjhjfyu', '64-1.jpg');
+INSERT INTO `aspirasi` (`idAspirasi`, `namaLengkap`, `textAspirasi`, `foto`, `status`) VALUES
+(3, 'jgsrkir', 'bgfvklofvjhjfyu', '64-1.jpg', '0'),
+(4, 'ty', 'yayayay', '3.jpg', '1');
 
 -- --------------------------------------------------------
 
@@ -113,7 +115,7 @@ ALTER TABLE `login`
 -- AUTO_INCREMENT for table `aspirasi`
 --
 ALTER TABLE `aspirasi`
-  MODIFY `idAspirasi` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `idAspirasi` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `aspirasipost`

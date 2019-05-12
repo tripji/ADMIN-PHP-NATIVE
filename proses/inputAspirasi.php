@@ -2,6 +2,7 @@
 		include '../config/db.php';
 
 		if(isset($_POST['submit'])){
+			$status = 0;
 			$namaLengkap = $_POST['namaLengkap'];
 			$textAspirasi = $_POST['textAspirasi'];
 			$ekstensi_diperbolehkan	= array('png','jpg');
@@ -14,7 +15,7 @@
 			if(in_array($ekstensi, $ekstensi_diperbolehkan) === true){
 				if($ukuran < 1044070){			
 					move_uploaded_file($file_tmp, 'images/'.$nama);
-					$query = mysqli_query($conn, "INSERT INTO aspirasi(namaLengkap, textAspirasi, foto) VALUES('$namaLengkap', '$textAspirasi', '$nama')");
+					$query = mysqli_query($conn, "INSERT INTO aspirasi(namaLengkap, textAspirasi, foto, status) VALUES('$namaLengkap', '$textAspirasi', '$nama', '$status')");
 					if($query){
 						echo ' 
 						 <script>

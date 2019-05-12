@@ -71,7 +71,7 @@
 
 <?php 
     require 'config/db.php';
-    $query = mysqli_query($conn, "SELECT * FROM aspirasipost ");
+    $query = mysqli_query($conn, "SELECT * FROM aspirasi WHERE status='1' ");
                         while($array = mysqli_fetch_array($query)){
                           echo '
 
@@ -82,7 +82,7 @@
                                                     <a href="#"><img class="rounded-circle" src="proses/images/'.$array['foto'].'"  alt=""></a>
                                                 </div>
                                             </td>
-                                            <td> '.$array['idPost'].' </td>
+                                            <td> '.$array['idAspirasi'].' </td>
                                             <td>  <span class="name">'.$array['namaLengkap'].'</span> </td>
                                             <td> <span class="name">'.$array['textAspirasi'].'</span> </td>
                                             <td>
